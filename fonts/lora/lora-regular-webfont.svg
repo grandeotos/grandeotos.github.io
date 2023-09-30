@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="https://www.w3.org/2000/svg">
 <metadata></metadata>
 <defs>
 <font id="loraregular" horiz-adv-x="1626" >
@@ -240,4 +240,4 @@
 <glyph unicode="&#xfb01;" horiz-adv-x="1276" d="M51 932v92h99h69v4q0 119 29 216.5t93 166.5t165.5 107t247.5 38q69 0 129 -13t105 -37t70.5 -57t25.5 -73q0 -41 -22.5 -69t-65.5 -28q-26 0 -43.5 9t-28.5 22t-16 28.5t-5 28.5t2.5 27t8.5 28q-36 26 -85.5 41.5t-115.5 15.5q-70 0 -128 -23t-100 -70.5t-65.5 -118.5 t-23.5 -167v-76h468q70 0 111 7t49 13h60v-827q0 -41 -1 -72.5t-8 -66.5l129 6v-84h-417v61q46 0 71 18.5t36 51.5t12.5 79t1.5 101v508q0 32 1.5 62t6.5 71l-520 -11l2 -726q0 -41 -1 -71.5t-8 -65.5l129 6v-84h-415v61q47 0 71.5 18.5t35.5 51.5t12 79t1 101l-4 621h-168z " />
 <glyph unicode="&#xfb02;" horiz-adv-x="1305" d="M51 932v92h168v63q0 115 27.5 203t77 147t119 89t153.5 30q60 0 107.5 -6.5t88 -15t75 -15t67.5 -6.5q29 0 58 7.5t61 25.5h59v-1329v-50q0 -23 -1 -44.5t-5 -44.5l129 6v-84h-418v61q46 0 71 18.5t36 51.5t12.5 79t1.5 101v1086q-33 20 -73.5 34t-81.5 22.5t-79.5 12.5 t-66.5 4q-70 0 -116.5 -19.5t-74 -56.5t-39 -91t-11.5 -123v-156h276v-81l-276 -4l2 -722q0 -41 -1 -72.5t-8 -66.5l129 6v-84h-417v61q46 0 71 18.5t35.5 51.5t12 79t1.5 101l-2 624z" />
 </font>
-</defs></svg> 
+</defs></svg>
