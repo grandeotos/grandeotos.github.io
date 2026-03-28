@@ -1,0 +1,159 @@
+---
+const { t } = Astro.props;
+
+const statusStyle: Record<string, string> = {
+  Production: 'text-green-400 bg-green-400/10 border-green-400/20',
+  'Coming Soon': 'text-amber-400 bg-amber-400/10 border-amber-400/20',
+};
+---
+
+<section id="projects" class="py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="mb-16">
+      <span class="font-mono text-ocean-400 text-xs tracking-[0.2em] uppercase">{t.label}</span>
+      <h2 class="font-display font-bold text-white text-3xl md:text-4xl mt-2">
+        {t.title}
+      </h2>
+    </div>
+
+    <!-- Featured projects -->
+    <div class="grid md:grid-cols-2 gap-5 mb-5">
+      {t.featured.map((project: any) => (
+        <div class={`border rounded-xl p-6 flex flex-col card-hover ${project.flagship ? 'bg-navy-700 border-ocean-500/25' : 'bg-navy-800 border-navy-700'}`}>
+
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                {project.href ? (
+                  <a href={project.href} target="_blank" rel="noopener noreferrer" class="font-display font-semibold text-white text-lg hover:text-ocean-400 transition-colors">
+                    {project.name}
+                  </a>
+                ) : (
+                  <h3 class="font-display font-semibold text-white text-lg">{project.name}</h3>
+                )}
+                {project.flagship && (
+                  <span class="text-xs font-mono text-ocean-400 bg-ocean-500/10 border border-ocean-500/20 px-2 py-0.5 rounded-full">
+                    Flagship
+                  </span>
+                )}
+              </div>
+              <p class="text-ocean-400 text-sm mt-0.5">{project.tagline}</p>
+            </div>
+            <span class={`shrink-0 text-xs font-mono px-2 py-0.5 rounded-full border ${statusStyle[project.status]}`}>
+              {t.statusLabels[project.status]}
+            </span>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed flex-1 mb-5">
+            {project.description}
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            {project.tech.map((tech: string) => (
+              <span class="font-mono text-xs text-slate-500 bg-navy-700 border border-navy-600 px-2.5 py-1 rounded-md">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- BC Extensions volume card -->
+    <div class="bg-navy-800 border border-navy-700 rounded-xl p-6 mb-14 card-hover">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+        <div class="shrink-0 text-center sm:text-left">
+          <span id="bc-counter" data-target={t.bcVolume.count} class="font-display font-bold text-ocean-400 text-5xl">+0</span>
+          <p class="text-white font-medium text-sm mt-1">{t.bcVolume.label}</p>
+        </div>
+        <div class="sm:border-l sm:border-navy-600 sm:pl-6">
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">{t.bcVolume.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {t.bcVolume.tech.map((tech: string) => (
+              <span class="font-mono text-xs text-slate-500 bg-navy-700 border border-navy-600 px-2.5 py-1 rounded-md">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal projects -->
+    <div class="mb-14">
+      <p class="font-mono text-slate-500 text-xs tracking-widest uppercase mb-5">{t.personalLabel}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {t.personal.map((project: any) => (
+          <div class="bg-navy-800 border border-navy-700 rounded-xl p-5 card-hover flex flex-col">
+            <div class="flex items-start justify-between gap-2 mb-3">
+              <div>
+                <h4 class="font-display font-medium text-white text-sm">{project.name}</h4>
+                <p class="text-ocean-400 text-xs mt-0.5">{project.tagline}</p>
+              </div>
+              <span class={`shrink-0 text-xs font-mono px-2 py-0.5 rounded-full border ${statusStyle[project.status]}`}>
+                {t.statusLabels[project.status]}
+              </span>
+            </div>
+            <p class="text-slate-500 text-xs leading-relaxed flex-1 mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.tech.map((tech: string) => (
+                <span class="font-mono text-xs text-slate-600 bg-navy-700/60 px-2 py-0.5 rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Academic projects -->
+    <div>
+      <p class="font-mono text-slate-500 text-xs tracking-widest uppercase mb-2">{t.academicLabel}</p>
+      <p class="text-slate-600 text-xs mb-5">
+        {t.academicNote}
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {t.academic.map((project: any) => (
+          <div class="bg-navy-800/40 border border-navy-700/50 rounded-xl p-5 card-hover">
+            <h4 class="font-display font-medium text-slate-400 text-sm mb-1">{project.name}</h4>
+            <p class="text-slate-600 text-xs mb-4 leading-relaxed">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.tech.map((tech: string) => (
+                <span class="font-mono text-xs text-slate-600 bg-navy-700/50 px-2 py-0.5 rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const counter = document.getElementById('bc-counter');
+  if (counter) {
+    const target = parseInt(counter.dataset.target ?? '0', 10);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        let current = 0;
+        const duration = 1200;
+        const step = duration / target;
+        const timer = setInterval(() => {
+          current += 1;
+          counter.textContent = '+' + current;
+          if (current >= target) clearInterval(timer);
+        }, step);
+      });
+    }, { threshold: 0.5 });
+    observer.observe(counter);
+  }
+</script>

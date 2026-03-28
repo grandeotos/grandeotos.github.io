@@ -1,0 +1,95 @@
+---
+const { t } = Astro.props;
+---
+
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <a href="#" class="font-mono text-ocean-400 text-sm tracking-widest font-medium">
+      grandeotos
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      {t.links.map((link: { href: string; label: string }) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm text-slate-400 hover:text-ocean-400 transition-colors duration-200 font-medium"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href={t.langSwitch.href}
+          class="text-xs font-mono text-slate-500 hover:text-ocean-400 transition-colors border border-navy-600 hover:border-ocean-500/50 px-2.5 py-1 rounded-md"
+        >
+          {t.langSwitch.label}
+        </a>
+      </li>
+    </ul>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-slate-400 hover:text-white transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-navy-700 bg-navy-900/98 backdrop-blur-sm"
+  >
+    <ul class="px-6 py-5 space-y-4">
+      {t.links.map((link: { href: string; label: string }) => (
+        <li>
+          <a
+            href={link.href}
+            class="mobile-link block text-slate-400 hover:text-ocean-400 transition-colors font-medium"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li class="pt-2 border-t border-navy-700">
+        <a
+          href={t.langSwitch.href}
+          class="text-xs font-mono text-slate-500 hover:text-ocean-400 transition-colors"
+        >
+          {t.langSwitch.label}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('nav');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav?.classList.add('bg-navy-900/95', 'backdrop-blur-md', 'border-b', 'border-navy-700');
+    } else {
+      nav?.classList.remove('bg-navy-900/95', 'backdrop-blur-md', 'border-b', 'border-navy-700');
+    }
+  });
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
