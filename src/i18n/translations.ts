@@ -25,6 +25,8 @@ export const translations = {
       statusHtml:
         '<a href="https://artexa.com" target="_blank" rel="noopener noreferrer" class="hover:text-ocean-400 transition-colors">ARTEXA México</a> &nbsp;·&nbsp; Remote &nbsp;·&nbsp; Open to BC consulting &amp; backend projects',
       ctaContact: 'Get in touch',
+      ctaCv: 'Download CV',
+      cvHref: '/cv/juan-luis-soto-cv-en.pdf',
       scroll: 'Scroll',
     },
     about: {
@@ -314,6 +316,8 @@ export const translations = {
       statusHtml:
         '<a href="https://artexa.com" target="_blank" rel="noopener noreferrer" class="hover:text-ocean-400 transition-colors">ARTEXA México</a> &nbsp;·&nbsp; Remoto &nbsp;·&nbsp; Abierto a consultoría BC y proyectos backend',
       ctaContact: 'Contáctame',
+      ctaCv: 'Descargar CV',
+      cvHref: '/cv/juan-luis-soto-cv-es.pdf',
       scroll: 'Bajar',
     },
     about: {
