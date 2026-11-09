@@ -1,0 +1,28 @@
+{
+  "name": "GrandeOtos",
+  "short_name": "GrandeOtos",
+  "description": "Juan Luis Soto - Software Developer. Sitio personal y CV.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0B1B36",
+  "background_color": "#071326",
+  "icons": [
+    {
+      "src": "/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

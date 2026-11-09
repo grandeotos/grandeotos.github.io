@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="GrandeOtos">
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="#071326"/>
+  <svg x="85" y="84" width="342" height="343" viewBox="65 12 323 324">
+    <g id="GO-mark">
+      <path id="G" d="M 220,25 L 80,106 L 80,242 L 220,323 L 220,129 L 143,187 L 143,190 L 183,190 L 183,259 L 117,220 L 117,128 L 220,68 Z" fill="#FFFFFF"/>
+      <path id="O" d="M 237,25 L 373,106 L 373,242 L 237,323 Z M 272,88 L 335,126 L 335,220 L 272,259 Z" fill="#0795F8" fill-rule="evenodd"/>
+    </g>
+  </svg>
+</svg>
